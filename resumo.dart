@@ -1,7 +1,8 @@
 void main() {
-  //hello();
-  //tipos();
-
+  hello();
+  inteiros();
+  strings();
+  listas();
   conjuntos();
 }
 
@@ -15,11 +16,60 @@ void hello() {
   }
 }
 
-void tipos() {
-  // inteiros
-  int idade = 24;
-  print(idade);
+void inteiros() {
+  
+  //-----------------------------------------------------------------
+  // inteiros são em dois tipos. 'ints' e 'bigInts', com o primeiro
+  // tendo 64 bits de tamanho no formato complemento de dois. O outro
+  // segundo a documentação, 'aceita valores arbitrários'
+  
+  //ints
+  int x = 24;
+  int y = 28;
+  int z = -3;
+    
+  
+  //----------------------------------------------------------------
+  // Metodos
+  
+  // módulo
+  print( z.abs() );
+  
+  // minimo divisor comum
+  print( x.gcd( y ) );
+  
+  // retorna um inteiro equivalente aos 3 menores digitos significativos
+  // na forma binária
+  print( x.toSigned( 3 ) );   // ultimo bit como sinal
+  print( x.toUnsigned( 3 ) ); // sempre como positivo
+  
+  //----------------------------------------------------------------
+  // operadores binários
+  
+  // shift com sinal
+  print( x >> 2 ); // para a direita
+  print( x << 2 ); // para a esquerda
+  
+  // shift sem sinal
+  print( x >>> 2 ); // para a direita
+  
+  // Ou exclusivo
+  print( x ^ y );
+  
+  // Ou
+  print( x | y );
 
+  // E
+  print( x & y );
+  
+  //----------------------------------------------------------------
+  // operadores aritiméticos
+  
+  //divisão retorna double
+  print( x/y );
+}
+
+void strings(){
   // strings
   String nome = "Lucas";
   print(nome);
@@ -86,6 +136,39 @@ void conjuntos() {
 
   //-----------------------------------------------------------------------
   // Atributos interessantes
+  print( seq.first );   // primeiro elemento
+  print( seq.last  );   // ultimo elemento
+  print( seq.length );  // quantos tem
+  print( seq.isEmpty ); // vazio?
+  
+  //-----------------------------------------------------------------------
+  // Metodos
+  print( " " );
+  
+  // adicionar novo elemento
+  seq.add( 8 );
+  print( seq );
+  
+  // adicionar valores de um outro iteravel
+  seq.addAll( [ 23, 48 , 17 ] );
+  print( seq );
+  
+  // verifica se o elemento dado existe
+  print( seq.contains( 7 ) );
+  print( seq.contains( 10 ) );
+  
+  // testes lógicos.
+  bool test_1( x ) => ( x%5 == 0 ); // testa se o numero é divisível por 5.
+  print( seq.any( test_1 ) );       // ao menos um elemento passa por 'test1'
+  print( seq.every( test_1 ) );     // todos passam por test1
+  
+  // ----------------------------------------------------------------------
+  // Ao contrário de Python, em Dart conjuntos são estruturas ordenáveis, com os
+  // elementos organizados na ordem que foram adicionados, então:
+  print( " " );
+  for( int i = 0 ; i < seq.length ; i++ ){
+    print('${i} ${seq.elementAt(i)}');
+  }
 }
 
 int maxAscDiff(List<int> seq) {
@@ -112,3 +195,4 @@ int maxAscDiff(List<int> seq) {
 
   return minSoFar;
 }
+
