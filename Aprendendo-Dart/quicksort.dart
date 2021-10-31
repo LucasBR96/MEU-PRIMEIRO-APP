@@ -67,8 +67,8 @@ void iterQuickSort( List seq ){
     }
 
     mid = partition( seq , bottom , top );
-    start.addAll( [ bottom , mid ] );
-    end.addAll( [ mid + 1 , top ] );
+    start.addAll( [ bottom , mid + 1 ] );
+    end.addAll( [ mid , top ] );
 
     print( " " );
     print( seq ); 
