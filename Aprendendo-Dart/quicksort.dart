@@ -1,6 +1,31 @@
 //------------------------------------------------------------------------------
 // Implementando Quicksort recursivo e iterativo em Dart
-void main(){}
+void main(){
+  // test1();
+  test2();
+}
+
+void test1(){
+  List <int> seq = [ 2 , 9 , 7 , 78 , 7 , 25 , 14 , 21];
+  print( seq );
+  
+  recQuickSort( seq );
+  print(" ");
+  print(" ----------------------------------- ");
+  print( seq );
+
+}
+
+void test2(){
+
+  List <int> seq = [ 2 , 9 , 7 , 78 , 7 , 25 , 14 , 21, 44, 331, 208, -1];
+  print( seq );
+  
+  iterQuickSort( seq );
+  print(" ");
+  print(" ----------------------------------- ");
+  print( seq );
+}
 
 int partition( List seq , int bottom , int top ){
 
@@ -43,7 +68,10 @@ void iterQuickSort( List seq ){
 
     mid = partition( seq , bottom , top );
     start.addAll( [ bottom , mid ] );
-    end.addAll( [ mid , top ] ); 
+    end.addAll( [ mid + 1 , top ] );
+
+    print( " " );
+    print( seq ); 
   }
 }
 
@@ -51,6 +79,9 @@ void recQuickSort(List seq) {
   if (seq.length <= 1) {
     return;
   }
+
+  print( " " );
+  print( seq );
 
   List lst1, lst2, lst;
   lst1 = [];
