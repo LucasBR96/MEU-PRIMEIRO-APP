@@ -51,7 +51,7 @@ void inteiros() {
   print( x << 2 ); // para a esquerda
   
   // shift sem sinal
-  print( x >>> 2 ); // para a direita
+  // print( x >>> 2 ); // para a direita
   
   // Ou exclusivo
   print( x ^ y );
@@ -165,10 +165,10 @@ void conjuntos() {
   // ----------------------------------------------------------------------
   // Ao contrário de Python, em Dart conjuntos são estruturas ordenáveis, com os
   // elementos organizados na ordem que foram adicionados, então:
-  print( " " );
-  for( int i = 0 ; i < seq.length ; i++ ){
-    print('${i} ${seq.elementAt(i)}');
-  }
+  // print( " " );
+  // for( int i = 0 ; i < seq.length ; i++ ){
+  //   print('${i} ${seq.elementAt(i)}');
+  // }
 }
 
 int maxAscDiff(List<int> seq) {

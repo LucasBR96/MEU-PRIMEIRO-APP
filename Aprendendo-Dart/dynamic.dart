@@ -18,26 +18,26 @@
 // 2 - F[ i ] = max( H[ i - 1 ] + | B[ i - 1 ] - 1 | , F[ i - 1 ] )
 // 3 - H[ i ] = max( | B[ i ] - 1 | + F[ i - 1 ] , H[ i - 1 ] + | B[ i ] - B[ i - 1 ] | )
 
-import 'dart:math';
+// import 'dart:math';
 
-void main( ){
-  List B = [ 28 , 129 , 17 , 12 , 1 , 33 , 12 , 5 , 1 ];
-}
+// void main( ){
+//   List B = [ 28 , 129 , 17 , 12 , 1 , 33 , 12 , 5 , 1 ];
+// }
 
-int maxSherlock( List <int> B ){
+// int maxSherlock( List <int> B ){
 
-  int n =  B.length;
-  List <int> F , H, C;
-  F = List.filled( n, 0 );
-  H = List.filled( n, 0 );
-  C = List.filled( n, 0 );
-  for( int i = 1 ; i < n; i++ ){
-    F[ i ] = max( H[ i - 1 ] + ( B[ i - 1 ] - 1 ).abs() , F[ i - 1 ] );
-    H[ i ] = max( ( B[ i ] - 1 ).abs() + F[ i - 1 ], H[ i - 1 ] + ( B[ i ] - B[ i - 1 ] ).abs() );
-    C[ i ] = max( F[ i ] , H[ i ] );
-  }
+//   int n =  B.length;
+//   List <int> F , H, C;
+//   F = List.filled( n, 0 );
+//   H = List.filled( n, 0 );
+//   C = List.filled( n, 0 );
+//   for( int i = 1 ; i < n; i++ ){
+//     F[ i ] = max( H[ i - 1 ] + ( B[ i - 1 ] - 1 ).abs() , F[ i - 1 ] );
+//     H[ i ] = max( ( B[ i ] - 1 ).abs() + F[ i - 1 ], H[ i - 1 ] + ( B[ i ] - B[ i - 1 ] ).abs() );
+//     C[ i ] = max( F[ i ] , H[ i ] );
+//   }
   
-  List <int> A = [];
-  for( int i = 0; i < n; i++ ){}
+//   List <int> A = [];
+//   for( int i = 0; i < n; i++ ){}
 
-}
+// }
