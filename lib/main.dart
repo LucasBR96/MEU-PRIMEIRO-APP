@@ -27,7 +27,21 @@ void f2() => runApp(
   // widgets diferentes.
    MaterialApp(
 
-    home:Scaffold(
+    home: meuApp()
+
+  )
+);
+
+// --------------------------------------------------
+// A diferença entre widgets 'stateless' e 'stateful' é o 
+// fato que o primeiro tem dados estárico. Ou seja, cores,
+// texto e divs não podem mudar sem que o app seja recarrega.
+// O segundo, então, é dinâmico, com dados mutáveis
+//
+class meuApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
 
       //Barra no topo do App
       appBar: AppBar(
@@ -42,7 +56,7 @@ void f2() => runApp(
       // widgets aninhados dentro de si
       body : Center( 
         child : Text( 
-          'meu primeiro app',
+          'meu primeiro App',
           style : TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -63,24 +77,7 @@ void f2() => runApp(
         hoverColor: Colors.red,
         backgroundColor: Colors.blueGrey[300],
       ),
-    ),
-
-  )
-);
-
-// --------------------------------------------------
-// A diferença entre widgets 'stateless' e 'stateful' é o 
-// fato que o primeiro tem dados estárico. Ou seja, cores,
-// texto e divs não podem mudar sem que o app seja recarrega.
-// O segundo, então, é dinâmico, com dados mutáveis
-//
-class meuApp extends StatelessWidget {
-  const ({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
     );
+    
   }
 }
