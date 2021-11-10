@@ -20,11 +20,7 @@ void f1() => runApp(
 
 void f2() => runApp(
   
-  //-----------------------------------------------------
-  // Aprendendo Scaffolds.
-  //
-  // Um Scaffold simplesmente serve de base para juntar varias 
-  // widgets diferentes.
+
    MaterialApp(
 
     home: meuApp()
@@ -38,9 +34,20 @@ void f2() => runApp(
 // texto e divs não podem mudar sem que o app seja recarrega.
 // O segundo, então, é dinâmico, com dados mutáveis
 //
+// Stateless widgets, quando são alteradas, levam o flutter 
+// a chamar a função build novamente, sem ter que rodar o app
+// todo de novo. Isso melhora a performance e é chamado de "Hot Reload"
 class meuApp extends StatelessWidget {
+
+  // ------------------------------------------------------
+  // Inicialializa o app. Não é nescessáriamente um
+  // construtor
   @override
   Widget build(BuildContext context) {
+
+    //-----------------------------------------------------
+    // Um Scaffold simplesmente serve de base para juntar varias 
+    // widgets diferentes.
     return Scaffold(
 
       //Barra no topo do App
@@ -56,7 +63,7 @@ class meuApp extends StatelessWidget {
       // widgets aninhados dentro de si
       body : Center( 
         child : Text( 
-          'meu primeiro App',
+          'Seu primeiro App',
           style : TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
